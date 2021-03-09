@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.momoka.studentmanager.dao.StudentDao">
+    <select id="selectAll" resultType="com.momoka.studentmanager.pojo.Student">
+        SELECT  * FROM  student
+    </select>
+    <!--根据ID删除学生信息-->
+    <delete id="deleteById" parameterType="Integer">
+        DELETE FROM student WHERE id = #{id}
+    </delete>
+    <!--添加学生信息-->
+    <insert id="insertStudent" parameterType="student">
+        INSERT INTO student(name,age,gender) values(#{name},#{age},#{gender})
+    </insert>
+<!--    根据ID查询-->
+    <select id="selectById" parameterType="Integer" resultType="student">
+        SELECT * FROM student WHERE id=#(id)
+    </select>
+<!--    学生信息修改-->
+    <update id="updateStudent"parameterType="student">
+        UPDATE student set name=#{name},age=#{age},gender=#{gender}WHERE id=#{id}
+    </update>
+</mapper>
