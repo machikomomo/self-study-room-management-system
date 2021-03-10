@@ -2,6 +2,7 @@ package com.momoka.studentmanager.controller;
 
 import com.momoka.studentmanager.pojo.Student;
 import com.momoka.studentmanager.service.StudentService;
+import com.momoka.studentmanager.service.StudentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +14,13 @@ import java.util.List;
 @Controller
 @RequestMapping("student")
 public class StudentController {
+    // 写法1
     @Autowired
     private StudentService ss;
+    //写法2
+//    StudentServiceImpl ss = new StudentServiceImpl();
+
+
     //全查
     @RequestMapping("queryAll")
     public String queryAll(Model model){

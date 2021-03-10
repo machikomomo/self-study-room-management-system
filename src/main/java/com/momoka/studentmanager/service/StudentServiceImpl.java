@@ -28,9 +28,22 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    // 事务 （全部成功，或者全部失败）
     public void addStudent(Student student) {
         try {
+            if(student.getAge() < 18) {
+                throw new RuntimeException("添加有异常");
+            }
+            // 1. china student
             sd.insertStudent(student);
+//
+//            // 2. japan student
+//            sd.insertStudent(student1);
+
+            //  a-> b zhuan 100
+            // 1. a -= 100
+            // 2. b += 100
+
         }catch (Exception e){
             throw new RuntimeException("添加有异常");
         }
