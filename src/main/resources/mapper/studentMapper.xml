@@ -12,15 +12,15 @@
         DELETE FROM student WHERE id = #{id}
     </delete>
     <!--添加学生信息-->
-    <insert id="insertStudent" parameterType="student">
+    <insert id="insertStudent" parameterType="com.momoka.studentmanager.pojo.Student">
         INSERT INTO student(name,age,gender) values(#{name},#{age},#{gender})
     </insert>
 <!--    根据ID查询-->
-    <select id="selectById" parameterType="Integer" resultType="student">
+    <select id="selectById" parameterType="Integer" resultType="com.momoka.studentmanager.pojo.Student">
         SELECT * FROM student WHERE id=#(id)
     </select>
 <!--    学生信息修改-->
-    <update id="updateStudent"parameterType="student">
+    <update id="updateStudent" parameterType="com.momoka.studentmanager.pojo.Student">
         UPDATE student set name=#{name},age=#{age},gender=#{gender}WHERE id=#{id}
     </update>
 

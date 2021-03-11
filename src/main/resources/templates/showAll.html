@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<!--ns：namespace命名空间 先忽略 用leaf就要这个表头-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息展示页面</title>
+    <!--    css样式如下    -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <table class="table table-dark table-striped">
+        <thead>
+        <!--      tr表示表头 第一栏-->
+        <tr>
+            <th scope="col">学生编号</th>
+            <th scope="col">学生姓名</th>
+            <th scope="col">学生性别</th>
+            <th scope="col">学生年龄</th>
+            <th scope="col">学生操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--      第一行each表示循环遍历这个列表-->
+        <!--      list是从controller model map里面去取的-->
+        <tr th:each="user:${list}">
+            <th scope="row" th:text="${user.id}"></th>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.gender}"></td>
+            <td th:text="${user.age}"></td>
+            <td>
+                <button type="button" class="btn btn-warning" name="deleteUserBtn" th:id="${user.id}">删除</button>
+                <button type="button" class="btn btn-warning" name="updateUserBtn" th:id="${user.id}">修改</button>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+    <a href="/add.html">添加学生信息</a>
+
+
+</div>
+
+
+</body>
+</html>
