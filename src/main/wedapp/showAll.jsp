@@ -1,10 +1,4 @@
-<%--
-Created by IntelliJ IDEA.
-User: 闫腾飞
-Date: 2020/10/4
-Time: 0:25
-To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -12,9 +6,9 @@ To change this template use File | Settings | File Templates.
     <title>Title</title>
 </head>
 <body>
-<center>
-    <h3>学生信息展示页面</h3>
-    <table border="1" width="600px">
+    <center>
+        <h3>学生信息展示页面</h3>
+        <table border="1" width="600px">
         <tr>
             <td>学生编号</td>
             <td>学生姓名</td>

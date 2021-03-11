@@ -6,9 +6,11 @@ public class Student {
     private Integer age;
     private String gender;
 
+    //无参构造
     public Student() {
     }
 
+    //有参构造
     public Student(Integer id, String name, Integer age, String gender) {
         this.id = id;
         this.name = name;

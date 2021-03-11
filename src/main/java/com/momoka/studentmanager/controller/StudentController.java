@@ -17,9 +17,6 @@ public class StudentController {
     // 写法1
     @Autowired
     private StudentService ss;
-    //写法2
-//    StudentServiceImpl ss = new StudentServiceImpl();
-
 
     //全查
     @RequestMapping("queryAll")

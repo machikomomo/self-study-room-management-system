@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 import java.util.List;
 
 @Mapper
+//根据Mapper中的代理，为接口生成实现类
 public interface StudentDao {
     //全查学生信息
     public List<Student> selectAll();
