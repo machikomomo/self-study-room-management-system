@@ -45,6 +45,7 @@ public class StudentServiceImpl implements StudentService {
             // 2. b += 100
 
         }catch (Exception e){
+            e.printStackTrace();
             throw new RuntimeException("添加有异常");
         }
     }

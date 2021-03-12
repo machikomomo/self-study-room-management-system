@@ -51,6 +51,11 @@ public class StudentController {
         }
     }
 
+    @RequestMapping("add")
+    public String add(){
+        return "add";
+    }
+
     //根据ID查询学生信息
     @RequestMapping("queryById")
     public String queryById(Integer id, ModelMap mm){
