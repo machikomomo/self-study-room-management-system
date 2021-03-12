@@ -36,13 +36,6 @@ public class StudentServiceImpl implements StudentService {
             }
             // 1. china student
             sd.insertStudent(student);
-//
-//            // 2. japan student
-//            sd.insertStudent(student1);
-
-            //  a-> b zhuan 100
-            // 1. a -= 100
-            // 2. b += 100
 
         }catch (Exception e){
             e.printStackTrace();

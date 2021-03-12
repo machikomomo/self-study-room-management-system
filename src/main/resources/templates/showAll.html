@@ -44,8 +44,8 @@
             <td th:text="${user.gender}"></td>
             <td th:text="${user.age}"></td>
             <td>
-                <button type="button" class="btn btn-warning" name="deleteUserBtn" th:id="${user.id}">删除</button>
-                <button type="button" class="btn btn-warning" name="updateUserBtn" th:id="${user.id}">修改</button>
+                <a  class="btn btn-danger" th:href="@{'/student/removeById?id='+${user.id}}" >删除</a>
+                <a  class="btn btn-warning" th:href="@{'/student/update?id='+${user.id}}" >修改</a>
             </td>
         </tr>
 

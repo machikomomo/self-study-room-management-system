@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -52,12 +53,14 @@ public class StudentController {
     }
 
     @RequestMapping("add")
-    public String add(){
+    public String add(Model model){
+        Student student = new Student();
+        model.addAttribute("student",student);
         return "add";
     }
 
     //根据ID查询学生信息
-    @RequestMapping("queryById")
+    @RequestMapping("update")
     public String queryById(Integer id, ModelMap mm){
         Student student = ss.queryById(id);
         mm.addAttribute("student",student);
