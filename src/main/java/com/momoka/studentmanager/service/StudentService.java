@@ -1,8 +1,6 @@
 package com.momoka.studentmanager.service;
 
 import com.momoka.studentmanager.pojo.Student;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

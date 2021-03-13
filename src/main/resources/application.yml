@@ -1,8 +1,6 @@
 #配置数据源信息
 spring:
   datasource:
-#    type: com.alibaba.druid.pool.DruidDataSource
-    #数据源类型
     driver-class-name: com.mysql.jdbc.Driver #驱动名称
     url: jdbc:mysql://localhost:3306/studentinformation?characterEncoding=utf8 #URL链接
     username: root
@@ -11,5 +9,6 @@ spring:
 mybatis:
   type-aliases-package: com.momoka.studentmanager.pojo #配置mybatis类别名
   mapper-locations: classpath:/mapper/*Mapper.xml #放置映射文件的路径，全都放在mapper文件夹下的所有Mapper.xml
+
 server:
   port: 8088
