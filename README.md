@@ -31,4 +31,4 @@ SpringBoot+MyBatis+Thymeleaf
 
 分为数据回显和数据修改。
 
-5、根据删除学生信息
+5、根据ID删除学生信息
