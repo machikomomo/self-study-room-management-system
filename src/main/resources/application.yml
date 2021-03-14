@@ -5,10 +5,13 @@ spring:
     url: jdbc:mysql://localhost:3306/studentinformation?characterEncoding=utf8 #URL链接
     username: root
     password:
+  web:
+    resources:
+      static-locations: classpath:/static/
 
 mybatis:
   type-aliases-package: com.momoka.studentmanager.pojo #配置mybatis类别名
-  mapper-locations: classpath:/mapper/*Mapper.xml #放置映射文件的路径，全都放在mapper文件夹下的所有Mapper.xml
+  mapper-locations: classpath:/mapper/*.xml #放置映射文件的路径，全都放在mapper文件夹下.xml
 
 server:
   port: 8088
