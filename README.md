@@ -27,6 +27,8 @@ SpringBoot+MyBatis+Thymeleaf
 
 3、添加学生信息
 
+![keeperAdd](./intro/keeperAdd.png)
+
 4、修改学生信息
 
 分为数据回显和数据修改。
