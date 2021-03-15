@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.momoka.studentmanager.dao.BlackDao">
+    <select id="selectAll" resultType="com.momoka.studentmanager.pojo.Black">
+        SELECT  * FROM  blacklist
+    </select>
+    <!--根据ID删除学生信息-->
+    <delete id="deleteById" parameterType="Integer">
+        DELETE FROM blacklist WHERE id = #{id}
+    </delete>
+    <!--添加学生信息-->
+    <insert id="insertBlack" parameterType="com.momoka.studentmanager.pojo.Black">
+        INSERT INTO blacklist(name,age,gender,tel) values(#{name},#{age},#{gender},#{tel})
+    </insert>
+</mapper>
