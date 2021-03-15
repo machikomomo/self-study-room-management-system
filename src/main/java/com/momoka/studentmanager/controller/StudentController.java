@@ -17,6 +17,10 @@ public class StudentController {
     @Autowired
     private StudentService ss;
 
+    @RequestMapping("welcome")
+    public String welcome(){
+        return "welcome";
+    }
     //全查
     @RequestMapping("queryAll")
     public String queryAll(Model model){
@@ -62,7 +66,6 @@ public class StudentController {
     public String queryById(Integer id, ModelMap mm){
         Student student = ss.queryById(id);
         mm.addAttribute("student",student);
-        //跳转到修改页面，进行数据的回显
         return "update";
     }
 

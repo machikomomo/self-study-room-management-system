@@ -16,12 +16,6 @@
         <p>关于中国未来的经济政策，李克强说，去年我们没有搞宽松政策，或者说所谓量化宽松，今年也就没有必要“急转弯”，还是要保持政策的连续性和可持续性，着力稳固经济，推动向好。保持经济运行在合理区间，还是要注重把肥施在根上，现在市场主体特别是中小微企业还在恢复元气中。由于经济恢复增长，我们要合理调整政策，但调整是适度的，有些阶段性政策退了，同时又用一些结构性减税降费政策来冲抵影响，保持保民生、保就业、保市场主体的力度不减。</p>
 
     </div>
-<!--<div class="page-header">-->
-<!--    <h2>学生信息添加页面 <small>Add Student Information Here</small></h2>-->
-<!--</div>-->
-<!--<div class="page-header">-->
-<!--    <h2>学生信息添加页面<small>Add Student Information Here</small></h2>-->
-<!--</div>-->
 
 <!--    接收数据以后 交给下面action指定的网址去处理-->
 <form th:action="@{/student/changeStudent}" th:object="${student}" method="post">
@@ -47,7 +41,7 @@
         </div>
 
 
-            <input type="hidden"  th:field="*{id}">
+        <input type="hidden"  th:field="*{id}">
 
 
     </div>
@@ -55,44 +49,6 @@
 </form>
 
 </div>
-
-<!--    <div class="form-group">-->
-<!--        <label for="inputAddress">Address</label>-->
-<!--        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">-->
-<!--    </div>-->
-<!--    <div class="form-group">-->
-<!--        <label for="inputAddress2">Address 2</label>-->
-<!--        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">-->
-<!--    </div>-->
-
-
-
-
-<!--    <div class="form-row">-->
-<!--        <div class="form-group col-md-6">-->
-<!--            <label for="inputCity">City</label>-->
-<!--            <input type="text" class="form-control" id="inputCity">-->
-<!--        </div>-->
-<!--        <div class="form-group col-md-4">-->
-<!--            <label for="inputState">State</label>-->
-<!--            <select id="inputState" class="form-control">-->
-<!--                <option selected>Choose...</option>-->
-<!--                <option>...</option>-->
-<!--            </select>-->
-<!--        </div>-->
-<!--        <div class="form-group col-md-2">-->
-<!--            <label for="inputZip">Zip</label>-->
-<!--            <input type="text" class="form-control" id="inputZip">-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="form-group">-->
-<!--        <div class="form-check">-->
-<!--            <input class="form-check-input" type="checkbox" id="gridCheck">-->
-<!--            <label class="form-check-label" for="gridCheck">-->
-<!--                Check me out-->
-<!--            </label>-->
-<!--        </div>-->
-<!--    </div>-->
 
 
 

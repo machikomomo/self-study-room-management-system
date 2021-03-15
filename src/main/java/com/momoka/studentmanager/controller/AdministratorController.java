@@ -23,11 +23,13 @@ public class AdministratorController {
     }
 
     @RequestMapping("dologin")
-    public String match(Administrator administrator){
+    public String match(Administrator administrator){//括弧里的为前端传回的对象
         Administrator res = as.queryByUsername(administrator.getUsername());
+        //依照前端返回的对象，获得的username，依照username去执行queryByUsername，能从后端取得一个对象
+        //如果能够取到，就比较两者的密码是否相同，如果相同，就转入首页
         if(res!=null){
             if(res.getPassword().equals(administrator.getPassword())){
-                return "redirect:/student/queryAll";
+                return "redirect:/student/welcome";
             }
         }
         return "error";

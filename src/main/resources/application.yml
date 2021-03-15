@@ -7,7 +7,7 @@ spring:
     password:
   web:
     resources:
-      static-locations: classpath:/static/
+      static-locations: classpath:static/
 
 mybatis:
   type-aliases-package: com.momoka.studentmanager.pojo #配置mybatis类别名

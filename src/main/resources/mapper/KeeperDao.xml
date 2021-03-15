@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.momoka.studentmanager.dao.KeeperDao">
+    <select id="selectKeeper" resultType="com.momoka.studentmanager.pojo.Keeper">
+        SELECT * FROM keeper;
+    </select>
+    <delete id="deleteById" parameterType="Integer">
+        DELETE FROM keeper WHERE id = #{id}
+    </delete>
+    <insert id="insertKeeper" parameterType="com.momoka.studentmanager.pojo.Keeper">
+        INSERT INTO keeper(roomArea,address,roomKeeper,keeperGender,keeperAge) values(#{roomArea},#{address},#{roomKeeper},#{keeperGender},#{keeperAge})
+    </insert>
+    <select id="selectById" parameterType="Integer" resultType="com.momoka.studentmanager.pojo.Keeper">
+        SELECT * FROM keeper WHERE id= #{id}
+    </select>
+    <update id="updateKeeper" parameterType="com.momoka.studentmanager.pojo.Keeper">
+        UPDATE keeper set roomArea=#{roomArea},address=#{address},roomKeeper=#{roomKeeper},keeperGender=#{keeperGender},keeperAge=#{keeperAge} WHERE id= #{id}
+    </update>
+
+</mapper>

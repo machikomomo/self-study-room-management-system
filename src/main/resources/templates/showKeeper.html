@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>默默自习室信息</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" >MoMoLearning</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/student/welcome">首页</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/keeper/queryAll">自习室信息<span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/news/queryAll">公告详情</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown link
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron">
+        <h5 class="display-4">默默自习室信息</h5>
+        <p class="lead">The Information Of MOMO 24 Hours Self-study Room</p>
+    </div>
+
+
+    <table class="table table-dark table-striped">
+        <thead>
+        <!--      tr表示表头 第一栏-->
+        <tr>
+            <th scope="col">自习室编号</th>
+            <th scope="col">自习室馆名</th>
+            <th scope="col">自习室地址</th>
+            <th scope="col">小管家姓名</th>
+            <th scope="col">小管家性别</th>
+            <th scope="col">小管家年龄</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--      第一行each表示循环遍历这个列表-->
+        <!--      list是从controller model map里面去取的-->
+        <tr th:each="user:${list}">
+            <th scope="row" th:text="${user.id}"></th>
+            <td th:text="${user.roomArea}"></td>
+            <td th:text="${user.address}"></td>
+            <td th:text="${user.roomKeeper}"></td>
+            <td th:text="${user.keeperGender}"></td>
+            <td th:text="${user.keeperAge}"></td>
+            <td>
+                <a  class="btn btn-danger" th:href="@{'/keeper/removeById?id='+${user.id}}" >删除</a>
+                <a  class="btn btn-warning" th:href="@{'/keeper/update?id='+${user.id}}" >修改</a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <!--    加一个链接跳转的页面-->
+    <a href="/keeper/add" class="btn btn-primary btn-lg" role="button" aria-pressed="true">添加自习室信息</a>
+    <a href="/student/welcome" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">返回首页</a>
+<!--    <p><a class="btn btn-primary btn-lg" href="/student/add" role="button">添加自习馆信息</a></p>-->
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</body>
+</html>

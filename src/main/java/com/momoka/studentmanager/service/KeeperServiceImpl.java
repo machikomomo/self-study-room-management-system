@@ -1,7 +1,7 @@
 package com.momoka.studentmanager.service;
 
-import com.momoka.studentmanager.dao.StudentDao;
-import com.momoka.studentmanager.pojo.Student;
+import com.momoka.studentmanager.dao.KeeperDao;
+import com.momoka.studentmanager.pojo.Keeper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,28 +10,28 @@ import java.util.List;
 
 @Service
 @Transactional
-public class StudentServiceImpl implements StudentService {
+public class KeeperServiceImpl implements KeeperService {
     @Autowired
-    private StudentDao sd;
+    private KeeperDao kd;
+
     @Override
-    public List<Student> queryAll() {
-        return sd.selectAll();
+    public List<Keeper> queryAll() {
+        return kd.selectKeeper();
     }
 
     @Override
     public void removeById(Integer id) {
         try {
-            sd.deleteById(id);
+            kd.deleteById(id);
         }catch (Exception e){
             throw new RuntimeException("根据ID删除有异常");
         }
     }
 
     @Override
-    // 事务 （全部成功，或者全部失败）
-    public void addStudent(Student student) {
+    public void addKeeper(Keeper keeper) {
         try {
-            sd.insertStudent(student);
+            kd.insertKeeper(keeper);
         }catch (Exception e){
             e.printStackTrace();
             throw new RuntimeException("添加有异常");
@@ -39,14 +39,14 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public Student queryById(Integer id) {
-        return sd.selectById(id);
+    public Keeper queryById(Integer id) {
+        return kd.selectById(id);
     }
 
     @Override
-    public void changeStudent(Student student) {
+    public void changeKeeper(Keeper keeper) {
         try {
-            sd.updateStudent(student);
+            kd.updateKeeper(keeper);
         }catch (Exception e){
             throw new RuntimeException("修改数据异常");
         }
