@@ -29,6 +29,7 @@ public class NewsController {
     @RequestMapping("text")
     public String getText(Integer id, ModelMap model){
         News news = ns.queryById(id);
+        news.setContent(news.getContent().replace("\n", "<br />"));
         model.addAttribute("news",news);
         //跳转到修改页面，进行数据的回显
         return "text";

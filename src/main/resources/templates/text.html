@@ -24,7 +24,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/keeper/queryAll">自习室信息</a>
+                    <a class="nav-link" href="/keeper/queryAll">基础信息</a>
                 </li>
 
                 <li class="nav-item active">
@@ -32,13 +32,13 @@
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="/student/welcome" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        用户管理
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/keeper/queryAll">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="/student/queryAll">会员信息</a>
+                        <a class="dropdown-item" href="#">套餐机制</a>
+                        <a class="dropdown-item" href="#">黑名单</a>
                     </div>
                 </li>
             </ul>
@@ -53,25 +53,9 @@
 
     <div class="card">
         <div class="card-body">
+<!--            <p th:utext="${#strings.replace( #strings.escapeXml( news.content ),T(java.lang.System).getProperty('line.separator'),'&lt;br /&gt;')}" ></p >-->
+            <div th:utext="${news.content}"></div>
 
-<!--            二、提出选址报告-->
-<!--            仓库选址报告应该包括以下内容-->
-<!--            1、选址概述 这一部分要简单扼要地阐述选址工作组的组成选址工作进行的过程选址的依据和原则简单介绍可供选择的几个地点并推荐一个最优方案。-->
-<!--            2、选址要求及主要指标 说明为了适应仓库作业的特点完成仓储生产任务备选地点应满足的基本要求简述各备选地址满足要求的程度。列出选址的主要指标如仓库总占地面积、仓库存储能力、仓库职工总数水电需用量等。-->
-<!--            3、库区位置说明及平面图 这部分说明库区的具体方位四周距主要建筑物及大型设施的距离附近的地形、地貌、地物等并画出区域位置图。-->
-<!--            4、建设时占地及拆迁情况 这部分要说明仓库建设占地范围内的耕地情况、拆迁户数及人口数估算征地和拆迁费用。-->
-<!--            5、当地地质、地震、气象和水文情况 这部分包括备选地的地质情况、地震烈度、气温、降水量、汇水面积、历史洪水水位等。-->
-<!--            6、交通及通讯条件 这部分要说明备选地的铁路、公路、水运及通讯的设施条件和可利用程度。-->
-
-            <table class="table table-hover">
-                <tbody>
-                <tr th:each="user:${news}">
-                    <td th:text="${news.title}"></td>
-                    <td th:text="${news.content}"></td>
-                </tr>
-
-                </tbody>
-            </table>
         </div>
     </div>
 
