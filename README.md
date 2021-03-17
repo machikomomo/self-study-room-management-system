@@ -1,4 +1,4 @@
-Student Management System——SpringBoot简单案例的实现
+Self-study Room Management System——SpringBoot简单案例的实现
 
 一、技术选型：
 
